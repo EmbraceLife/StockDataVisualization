@@ -1,0 +1,799 @@
+{
+  "title": "Processing Syntax for Data Viz",
+  "id": 1,
+  "formatVersion": 2,
+  "ideas": {
+    "1": {
+      "title": "array",
+      "id": 2,
+      "ideas": {
+        "1": {
+          "title": "print array",
+          "id": 3,
+          "ideas": {
+            "1": {
+              "title": "printArray(array)",
+              "id": 4,
+              "ideas": {
+                "1": {
+                  "title": "only work for 1 dimension array",
+                  "id": 51,
+                  "attr": {
+                    "style": {}
+                  }
+                }
+              }
+            },
+            "2": {
+              "title": "for (int i = 0; i < array.length; i++) {}\nprintln(array[i]);",
+              "id": 5
+            }
+          }
+        },
+        "2": {
+          "title": "create an array of 20 random integers ",
+          "id": 37,
+          "ideas": {
+            "1": {
+              "title": "int[] bananas;\nvoid setup() {}\n 1. bananas = new int[20];   \n  2. for (int i = 0; i &lt; 20; i++) {}\n    2.1bananas[i] = int(random(100)); \n  3. printArray(bananas);\n",
+              "id": 39
+            }
+          }
+        },
+        "0.5": {
+          "title": "what special",
+          "id": 17,
+          "ideas": {
+            "1": {
+              "title": "length must be set first",
+              "id": 18
+            }
+          }
+        },
+        "0.75": {
+          "title": "declare",
+          "id": 19,
+          "ideas": {
+            "1": {
+              "title": "Int[] array;",
+              "id": 20
+            },
+            "2": {
+              "title": "Ball[] ballCollection;",
+              "id": 23
+            }
+          }
+        },
+        "0.875": {
+          "title": "initialize ",
+          "id": 21,
+          "ideas": {
+            "1": {
+              "title": "array = {1,3,5,6};",
+              "id": 22
+            },
+            "2": {
+              "title": "ballCollection[0] = new Ball(x, y);",
+              "id": 24,
+              "ideas": {
+                "1": {
+                  "title": "for (int i = 0; i < ballCollection.length; i++) {}\nballCollection[i] = new Ball(random(width), random(height));",
+                  "id": 25
+                }
+              }
+            }
+          }
+        }
+      },
+      "attr": {
+        "style": {}
+      }
+    },
+    "11": {
+      "title": "ArrayList",
+      "id": 6,
+      "ideas": {
+        "1": {
+          "title": "declare ",
+          "id": 9,
+          "ideas": {
+            "1": {
+              "title": "ArrayList ballCollection;",
+              "id": 8
+            }
+          }
+        },
+        "2": {
+          "title": "initialize",
+          "id": 10,
+          "ideas": {
+            "1": {
+              "title": "ballCollection = new ArrayList();",
+              "id": 11
+            }
+          }
+        },
+        "3": {
+          "title": "add",
+          "id": 12,
+          "ideas": {
+            "1": {
+              "title": "ballCollection.add(ball1);",
+              "id": 13
+            },
+            "2": {
+              "title": "for (int i = 0; i < 100; i++) {} \n1. Ball myBall = new Ball(random(width),  random(height));\n2. ballCollection.add(myBall);",
+              "id": 32
+            },
+            "3": {
+              "title": "void draw() {}\n1. Ball myBall = new Ball(random(width), random(height));\n2. ballCollection.add(myBall);",
+              "id": 34
+            },
+            "0.5": {
+              "title": "ball1 = new Ball(x, y);",
+              "id": 27
+            }
+          }
+        },
+        "4": {
+          "title": "get",
+          "id": 28,
+          "ideas": {
+            "1": {
+              "title": "Ball myBall1 = (Ball) ballCollection.get(0);",
+              "id": 29
+            },
+            "2": {
+              "title": "for (int i = 0; i < ballCollection.size(); i++) {}\nBall myBall = ballCollection.get(i);",
+              "id": 33
+            }
+          }
+        },
+        "0.5": {
+          "title": "what special",
+          "id": 15,
+          "ideas": {
+            "1": {
+              "title": "dynamic in length",
+              "id": 16
+            }
+          }
+        }
+      },
+      "attr": {
+        "style": {}
+      }
+    },
+    "16": {
+      "title": "1. How to get data from CSV ",
+      "id": 46,
+      "ideas": {
+        "1": {
+          "title": "get csv into data folder",
+          "id": 47,
+          "ideas": {
+            "1": {
+              "title": "drag csv file into IDE",
+              "id": 48
+            }
+          }
+        },
+        "2": {
+          "title": "make a string name for csv file",
+          "id": 49,
+          "ideas": {
+            "1": {
+              "title": "String filename = \"mystock.csv\";",
+              "id": 50
+            }
+          }
+        },
+        "3": {
+          "title": "how to specify \", \" or \"\",\"\"",
+          "id": 52,
+          "ideas": {
+            "1": {
+              "title": "split(string, delimit)",
+              "id": 53
+            }
+          }
+        },
+        "4": {
+          "title": "example: how to load stock data from csv",
+          "id": 56,
+          "attr": {
+            "attachment": {
+              "contentType": "text/html",
+              "content": "<div>String filename = \"wfgk.csv\";</div><div>String[] rawData;</div><div>String[] dates;</div><div>float[] prices;</div><div>int[] volumes;</div><div><br></div><div>void setup() {</div><div>&nbsp; loadData(\"wfgk.csv\");</div><div>&nbsp; printArray(volumes);</div><div>}</div><div><br></div><div>void loadData(String filename) {</div><div><br></div><div>&nbsp; rawData = loadStrings(filename);</div><div>&nbsp;&nbsp;</div><div>&nbsp; dates = new String[rawData.length-1];</div><div>&nbsp; prices = new float[rawData.length-1];</div><div>&nbsp; volumes = new int[rawData.length-1];</div><div>&nbsp;&nbsp;</div><div>&nbsp; for (int i = 1; i &lt; rawData.length; i++) {</div><div>&nbsp;&nbsp;</div><div>&nbsp; &nbsp; &nbsp;String[] thisRow = split(rawData[i], \",\");&nbsp;</div><div>&nbsp; &nbsp; &nbsp;//printArray(thisRow);</div><div>&nbsp; &nbsp; &nbsp;dates[i-1] = (thisRow[0]);</div><div>&nbsp; &nbsp; &nbsp;prices[i-1] = float(thisRow[1]);</div><div>&nbsp; &nbsp; &nbsp;volumes[i-1] = int(thisRow[2]);</div><div>&nbsp; }</div><div>}</div>"
+            },
+            "style": {}
+          }
+        }
+      },
+      "attr": {
+        "attachment": {
+          "contentType": "text/html",
+          "content": "<div>String filename = \"mystock.csv\";</div><div>String[] rawData;</div><div>String[] date = new String[7];</div><div>int[] prices = new int[7];</div><div><br></div><div>void setup() {</div><div>&nbsp; rawData = loadStrings(filename);</div><div>&nbsp; printArray(rawData);</div><div>&nbsp; for (int i = 1; i &lt; rawData.length; i++) {</div><div>&nbsp; &nbsp;String[] thisRow = split(rawData[i], \", \");&nbsp;</div><div>&nbsp; &nbsp;printArray(thisRow);</div><div>&nbsp; &nbsp;date[i-1] = (thisRow[1]);</div><div>&nbsp; &nbsp;prices[i-1] = int(thisRow[2]);</div><div>&nbsp; }</div><div>&nbsp; printArray(date);</div><div>&nbsp; printArray(prices);</div><div>}</div><div><br></div><div><br></div><div>void draw() {</div><div>&nbsp;&nbsp;</div><div>&nbsp;&nbsp;</div><div>}</div>"
+        },
+        "style": {}
+      }
+    },
+    "21": {
+      "title": "2. How to draw bar chart",
+      "id": 35,
+      "attr": {
+        "attachment": {
+          "contentType": "text/html",
+          "content": "<div>String filename = \"wfgk.csv\";</div><div>String[] rawData;</div><div>String[] dates;</div><div>float[] prices;</div><div>float[] volumes;</div><div><br></div><div><br></div><div>void setup() {</div><div>&nbsp; size(1200, 600);</div><div>&nbsp;&nbsp;</div><div>&nbsp; loadData(\"wfgk.csv\");</div><div>&nbsp; //println(volumes[0], volumes[0]*0.000001);</div><div>&nbsp; &nbsp;&nbsp;</div><div>}</div><div><br></div><div>void draw() {</div><div>background(225);</div><div>&nbsp;&nbsp;</div><div>stroke(255);&nbsp;</div><div>&nbsp;&nbsp;</div><div>for (int i = 0; i &lt; volumes.length; i++) {</div><div>&nbsp; float multiplier = 0.000001;</div><div>&nbsp; float rectWidth = width/(volumes.length);</div><div>&nbsp; float ypos = (height) - (volumes[i]*multiplier);</div><div>&nbsp; int margin = 100;</div><div>&nbsp; fill(0, 100, 0, 200);</div><div>&nbsp; rect(rectWidth*i, ypos-margin, rectWidth, volumes[i]*multiplier</div><div>&nbsp; );</div><div>}&nbsp;</div><div><br></div><div>}</div><div><br></div><div><br></div><div><br></div><div>void loadData(String filename) {</div><div><br></div><div>&nbsp; rawData = loadStrings(filename);</div><div>&nbsp;&nbsp;</div><div>&nbsp; dates = new String[rawData.length-1];</div><div>&nbsp; prices = new float[rawData.length-1];</div><div>&nbsp; volumes = new float[rawData.length-1];</div><div>&nbsp;&nbsp;</div><div>&nbsp; for (int i = 1; i &lt; rawData.length; i++) {</div><div>&nbsp;&nbsp;</div><div>&nbsp; &nbsp; &nbsp;String[] thisRow = split(rawData[i], \",\");&nbsp;</div><div>&nbsp; &nbsp; &nbsp;//printArray(thisRow);</div><div>&nbsp; &nbsp; &nbsp;dates[i-1] = (thisRow[0]);</div><div>&nbsp; &nbsp; &nbsp;prices[i-1] = float(thisRow[1]);</div><div>&nbsp; &nbsp; &nbsp;volumes[i-1] = int(thisRow[2]);</div><div>&nbsp; }</div><div>} &nbsp;}</div><div>&nbsp;&nbsp;</div><div>}</div>"
+        },
+        "style": {
+          "background": "transparent"
+        }
+      },
+      "ideas": {
+        "1": {
+          "title": "width of each bar",
+          "id": 40,
+          "ideas": {
+            "1": {
+              "title": "width/volumes.length",
+              "id": 41,
+              "attr": {
+                "style": {
+                  "background": "transparent"
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "transparent"
+            }
+          }
+        },
+        "2": {
+          "title": "yPos of each bar",
+          "id": 42,
+          "ideas": {
+            "1": {
+              "title": "ypos = height - (volumes[i]*multiplier)",
+              "id": 43,
+              "attr": {
+                "style": {
+                  "background": "transparent"
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "transparent"
+            }
+          }
+        },
+        "3": {
+          "title": "length of each bar ",
+          "id": 44,
+          "ideas": {
+            "1": {
+              "title": "volumes[i]*multiplier",
+              "id": 45,
+              "attr": {
+                "style": {
+                  "background": "transparent"
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "transparent"
+            }
+          }
+        },
+        "4": {
+          "title": "questions",
+          "id": 57,
+          "ideas": {
+            "1": {
+              "title": "why num of bars not fill out the whole canvas",
+              "id": 58,
+              "ideas": {
+                "1": {
+                  "title": "width/volumes.length produce int not float",
+                  "id": 59,
+                  "attr": {
+                    "style": {
+                      "background": "transparent"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "transparent"
+                }
+              }
+            },
+            "2": {
+              "title": "how to get date displayed in this situation",
+              "id": 60,
+              "attr": {
+                "style": {
+                  "background": "transparent"
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "transparent"
+            }
+          }
+        }
+      }
+    },
+    "41": {
+      "title": "3. how to plot data with points",
+      "id": 54,
+      "attr": {
+        "attachment": {
+          "contentType": "text/html",
+          "content": "<div>String filename = \"wfgk.csv\";</div><div>String[] rawData;</div><div>String[] dates;</div><div>float[] prices;</div><div>float[] volumes;</div><div><br></div><div><br></div><div>float xSpacer; // distance between points</div><div>int margin, graphHeight;</div><div>PVector[] positions = new PVector[244];</div><div>// PVector.x, .y</div><div><br></div><div>void setup() {</div><div>&nbsp; size(1200, 600);</div><div>&nbsp; loadData(\"wfgk.csv\");</div><div>&nbsp; printArray(prices);</div><div>&nbsp;&nbsp;</div><div><br></div><div>}</div><div><br></div><div><br></div><div>void draw() {</div><div>&nbsp; background(20);</div><div>&nbsp; fill(200);</div><div>&nbsp; for (int i = 0; i &lt; positions.length; i++) {</div><div>&nbsp; &nbsp;ellipse(positions[i].x, positions[i].y, &nbsp;3, 3);</div><div>&nbsp; }</div><div>&nbsp; smooth();</div><div>}</div><div><br></div><div><br></div><div>void loadData(String filename) {</div><div><br></div><div>&nbsp; rawData = loadStrings(filename);</div><div>&nbsp;&nbsp;</div><div>&nbsp; dates = new String[rawData.length-1];</div><div>&nbsp; prices = new float[rawData.length-1];</div><div>&nbsp; volumes = new float[rawData.length-1];</div><div>&nbsp;&nbsp;</div><div>&nbsp; for (int i = 1; i &lt; rawData.length; i++) {</div><div>&nbsp;&nbsp;</div><div>&nbsp; &nbsp; &nbsp;String[] thisRow = split(rawData[i], \",\");&nbsp;</div><div>&nbsp; &nbsp; &nbsp;//printArray(thisRow);</div><div>&nbsp; &nbsp; &nbsp;dates[i-1] = (thisRow[0]);</div><div>&nbsp; &nbsp; &nbsp;prices[i-1] = float(thisRow[1]);</div><div>&nbsp; &nbsp; &nbsp;volumes[i-1] = int(thisRow[2]);</div><div>&nbsp; }</div><div>&nbsp;&nbsp;</div><div>&nbsp; float overallMin = min(prices);</div><div>&nbsp; float overallMax = max(prices);</div><div>&nbsp;&nbsp;</div><div>&nbsp;&nbsp;</div><div>&nbsp; margin = 50;</div><div>&nbsp; graphHeight = (height-margin-margin);</div><div>&nbsp; xSpacer = ((width - margin) - margin)/(prices.length-1);</div><div><br></div><div>&nbsp;for (int i = 0; i &lt; prices.length; i++) {</div><div>&nbsp; &nbsp;float adjPrice = map(prices[i], overallMin, overallMax, 0, graphHeight );&nbsp;</div><div>&nbsp; &nbsp;float yPos = height - margin - adjPrice;</div><div>&nbsp; &nbsp;float xPos = margin + (xSpacer*i);</div><div>&nbsp; &nbsp;positions[i] = new PVector(xPos, yPos);</div><div><br></div><div>&nbsp;}</div><div>&nbsp;&nbsp;</div><div>} &nbsp;</div><div>&nbsp;&nbsp;</div>"
+        },
+        "style": {
+          "background": "transparent"
+        }
+      },
+      "ideas": {
+        "1": {
+          "title": "questions",
+          "id": 61,
+          "ideas": {
+            "1": {
+              "title": "how to use ArrayList with PVector",
+              "id": 62,
+              "attr": {
+                "style": {
+                  "background": "transparent"
+                }
+              }
+            },
+            "2": {
+              "title": "How to cut the edges and make the circle smooth",
+              "id": 63,
+              "attr": {
+                "style": {
+                  "background": "transparent"
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "transparent"
+            }
+          }
+        },
+        "0.5": {
+          "title": "keys",
+          "id": 64,
+          "ideas": {
+            "1": {
+              "title": "   1. float adjPrice = map(prices[i], overallMin, overallMax, 0, graphHeight ); \n   2. float yPos = height - margin - adjPrice;\n   3. float xPos = margin + (xSpacer*i);\n  4. positions[i] = new PVector(xPos, yPos);",
+              "id": 67,
+              "attr": {
+                "style": {
+                  "background": "transparent"
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "transparent"
+            }
+          }
+        }
+      }
+    },
+    "51": {
+      "title": "4. plot data with GUI",
+      "id": 55,
+      "attr": {
+        "attachment": {
+          "contentType": "text/html",
+          "content": "<div>String filename = \"wfgk.csv\";</div><div>String[] rawData;</div><div>String[] dates;</div><div>float[] prices;</div><div>float[] volumes;</div><div>float overallMin;</div><div>float overallMax;</div><div><br></div><div>float xSpacer; // distance between points</div><div>int margin, graphHeight;</div><div>PVector[] positions = new PVector[244];</div><div>// PVector.x, .y</div><div><br></div><div>void setup() {</div><div>&nbsp; size(1200, 600);</div><div>&nbsp; loadData(\"wfgk.csv\");</div><div>&nbsp; printArray(prices);</div><div>&nbsp;&nbsp;</div><div><br></div><div>}</div><div><br></div><div><br></div><div>void draw() {</div><div>&nbsp; background(20);</div><div>&nbsp; fill(200);</div><div>&nbsp; for (int i = 0; i &lt; positions.length; i++) {</div><div>&nbsp; &nbsp;ellipse(positions[i].x, positions[i].y, &nbsp;3, 3);</div><div>&nbsp; }</div><div>&nbsp; drawGUI();</div><div>&nbsp; smooth();</div><div>}</div><div><br></div><div><br></div><div>void loadData(String filename) {</div><div><br></div><div>&nbsp; rawData = loadStrings(filename);</div><div>&nbsp;&nbsp;</div><div>&nbsp; dates = new String[rawData.length-1];</div><div>&nbsp; prices = new float[rawData.length-1];</div><div>&nbsp; volumes = new float[rawData.length-1];</div><div>&nbsp;&nbsp;</div><div>&nbsp; for (int i = 1; i &lt; rawData.length; i++) {</div><div>&nbsp;&nbsp;</div><div>&nbsp; &nbsp; &nbsp;String[] thisRow = split(rawData[i], \",\");&nbsp;</div><div>&nbsp; &nbsp; &nbsp;//printArray(thisRow);</div><div>&nbsp; &nbsp; &nbsp;dates[i-1] = (thisRow[0]);</div><div>&nbsp; &nbsp; &nbsp;prices[i-1] = float(thisRow[1]);</div><div>&nbsp; &nbsp; &nbsp;volumes[i-1] = int(thisRow[2]);</div><div>&nbsp; }</div><div>&nbsp;&nbsp;</div><div>&nbsp; overallMin = min(prices);</div><div>&nbsp; overallMax = max(prices);</div><div>&nbsp;&nbsp;</div><div>&nbsp;&nbsp;</div><div>&nbsp; margin = 50;</div><div>&nbsp; graphHeight = (height-margin-margin);</div><div>&nbsp; xSpacer = ((width - margin) - margin)/(prices.length-1);</div><div><br></div><div>&nbsp;for (int i = 0; i &lt; prices.length; i++) {</div><div>&nbsp; &nbsp;float adjPrice = map(prices[i], overallMin, overallMax, 0, graphHeight );&nbsp;</div><div>&nbsp; &nbsp;float yPos = height - margin - adjPrice;</div><div>&nbsp; &nbsp;float xPos = margin + (xSpacer*i);</div><div>&nbsp; &nbsp;positions[i] = new PVector(xPos, yPos);</div><div><br></div><div>&nbsp;}</div><div>&nbsp;&nbsp;</div><div>} &nbsp;</div><div>&nbsp;&nbsp;</div><div>&nbsp;&nbsp;</div><div>void drawGUI() {</div><div>&nbsp; for (int i = 0; i &lt; positions.length; i++) {</div><div>&nbsp; &nbsp; stroke(200, 100);</div><div>&nbsp; &nbsp;&nbsp;</div><div>&nbsp; &nbsp; // line through point vertically</div><div>&nbsp; &nbsp; line(positions[i].x, margin, positions[i].x, height-margin);</div><div>&nbsp; &nbsp;&nbsp;</div><div>&nbsp; &nbsp; // draw date for each point</div><div>&nbsp; &nbsp; //text(dates[i], positions[i].x-35, height-margin+20);</div><div>&nbsp; &nbsp;&nbsp;</div><div>&nbsp; &nbsp; // link point with line backward</div><div>&nbsp; &nbsp; if (i &gt; 0) {</div><div>&nbsp; &nbsp; &nbsp; stroke(200);</div><div>&nbsp; &nbsp; &nbsp; line(positions[i].x, positions[i].y, positions[i-1].x, positions[i-1].y);&nbsp;</div><div>&nbsp; &nbsp; }</div><div>&nbsp; }</div><div>&nbsp;&nbsp;</div><div>&nbsp; // draw date range</div><div>&nbsp; fill(200, 0, 100);</div><div>&nbsp; text(dates[0], margin-40, height-margin+20);</div><div>&nbsp; text(dates[dates.length-1], positions[dates.length-1].x-40, height-margin+20);</div><div>&nbsp;&nbsp;</div><div>&nbsp;&nbsp;</div><div>&nbsp; // draw data range</div><div>&nbsp; fill(100, 200, 100);</div><div>&nbsp; text(overallMax, 5, margin);</div><div>&nbsp; text(overallMin, 5, height-margin);</div><div>}</div>"
+        },
+        "style": {
+          "background": "transparent"
+        },
+        "collapsed": true
+      },
+      "ideas": {
+        "1": {
+          "title": "questions",
+          "id": 68,
+          "ideas": {
+            "1": {
+              "title": "how to find the index of the max price and lowest price?",
+              "id": 69,
+              "attr": {
+                "style": {
+                  "background": "transparent"
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "transparent"
+            }
+          }
+        },
+        "2": {
+          "title": "keys",
+          "id": 70,
+          "ideas": {
+            "1": {
+              "title": "line through points vertically",
+              "id": 71,
+              "ideas": {
+                "1": {
+                  "title": "  for (int i = 0; i &lt; positions.length; i++) {}\n    stroke(200, 100);\n    line(positions[i].x, margin, positions[i].x, height-margin);\n    if (i &gt; 0) {}\n      stroke(200);\n      line(positions[i].x, positions[i].y, positions[i-1].x, positions[i-1].y); \n",
+                  "id": 72,
+                  "attr": {
+                    "style": {
+                      "background": "transparent"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "transparent"
+                }
+              }
+            },
+            "2": {
+              "title": "date range",
+              "id": 73,
+              "ideas": {
+                "1": {
+                  "title": " // draw date range\n  fill(200, 0, 100);\n  text(dates[0], margin-40, height-margin+20);\n  text(dates[dates.length-1], positions[dates.length-1].x-40, height-margin+20);\n",
+                  "id": 74,
+                  "attr": {
+                    "style": {
+                      "background": "transparent"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "transparent"
+                }
+              }
+            },
+            "3": {
+              "title": "price range",
+              "id": 75,
+              "ideas": {
+                "1": {
+                  "title": "  // draw data range\n  fill(100, 200, 100);\n  text(overallMax, 5, margin);\n  text(overallMin, 5, height-margin);",
+                  "id": 76,
+                  "attr": {
+                    "style": {
+                      "background": "transparent"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "transparent"
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "transparent"
+            }
+          }
+        }
+      }
+    },
+    "61": {
+      "title": "5. plot dynamic point-line-GUI",
+      "id": 77,
+      "ideas": {
+        "1": {
+          "title": "how to seperate month data",
+          "id": 78,
+          "attr": {
+            "attachment": {
+              "contentType": "text/html",
+              "content": "<div>String filename = \"wfgk.csv\";</div><div>String[] rawData;</div><div>String[] dates;</div><div>float[] prices;</div><div>int[] volumes;</div><div>ArrayList indexNov = new ArrayList();</div><div>ArrayList indexOct = new ArrayList();</div><div><br></div><div>void setup() {</div><div>&nbsp; loadData(\"wfgk.csv\");</div><div>&nbsp;&nbsp;</div><div>&nbsp;&nbsp;</div><div>&nbsp; indexNov = getMonthIndex(\"2014-11\");</div><div>&nbsp; printArray(indexNov);</div><div>&nbsp; indexOct = getMonthIndex(\"2015-10\");</div><div>&nbsp; printArray(indexOct);</div><div>}</div><div><br></div><div>void loadData(String filename) {</div><div><br></div><div>&nbsp; rawData = loadStrings(filename);</div><div><br></div><div>&nbsp; dates = new String[rawData.length-1];</div><div>&nbsp; prices = new float[rawData.length-1];</div><div>&nbsp; volumes = new int[rawData.length-1];</div><div><br></div><div>&nbsp; for (int i = 1; i &lt; rawData.length; i++) {</div><div><br></div><div>&nbsp; &nbsp; String[] thisRow = split(rawData[i], \",\");&nbsp;</div><div>&nbsp; &nbsp; //printArray(thisRow);</div><div>&nbsp; &nbsp; dates[i-1] = (thisRow[0]);</div><div>&nbsp; &nbsp; prices[i-1] = float(thisRow[1]);</div><div>&nbsp; &nbsp; volumes[i-1] = int(thisRow[2]);</div><div>&nbsp; }</div><div>}</div><div><br></div><div>ArrayList getMonthIndex(String month) {</div><div>&nbsp; ArrayList indexOfDaysInMonth = new ArrayList();</div><div>&nbsp; for (int i = 0; i &lt; dates.length; i++) {</div><div>&nbsp; &nbsp; String[] checkMonth = match(dates[i], month);</div><div>&nbsp; &nbsp; if (checkMonth != null) {</div><div>&nbsp; &nbsp; &nbsp; //println(\"index:\",i,\"-&gt;we are all in \", month);&nbsp;</div><div>&nbsp; &nbsp; &nbsp; indexOfDaysInMonth.add(i);</div><div>&nbsp; &nbsp; } else {</div><div>&nbsp; &nbsp; &nbsp; //println(\"index:\",i,\"-&gt;now outside of \", month);</div><div>&nbsp; &nbsp; }</div><div>&nbsp; }</div><div>&nbsp; //printArray(indexOct);</div><div>&nbsp; return indexOfDaysInMonth;</div><div>}</div>"
+            },
+            "style": {
+              "background": "transparent"
+            }
+          },
+          "ideas": {
+            "1": {
+              "title": "created a function to extract index for days of a particular month",
+              "id": 79,
+              "attr": {
+                "style": {
+                  "background": "transparent"
+                }
+              }
+            }
+          }
+        },
+        "2": {
+          "title": "7 functions to get yearly and monthly dates, prices, and volumes",
+          "id": 80,
+          "attr": {
+            "attachment": {
+              "contentType": "text/html",
+              "content": "<div>String filename = \"wfgk.csv\";</div><div>String[] rawData;</div><div>String[] dates;</div><div>float[] prices;</div><div>float[] volumes;</div><div><br></div><div><br></div><div>IntList index2014 = new IntList();</div><div>String[] dates2014;</div><div>float[] prices2014;</div><div>float[] volumes2014;</div><div><br></div><div>IntList index2015 = new IntList();</div><div>String[] dates2015;</div><div><br></div><div><br></div><div><br></div><div>IntList indexNov = new IntList();</div><div>IntList indexOct = new IntList();</div><div>String[] dates2014Nov;</div><div>float[] prices2014Nov;</div><div>float[] volumes2014Nov;</div><div>//ArrayList wfgkYears = new ArrayList();</div><div><br></div><div>void setup() {</div><div>&nbsp; loadData(\"wfgk.csv\");</div><div>&nbsp;&nbsp;</div><div>&nbsp; //dates2014 = getYearDates(\"2014\", dates2014);</div><div>&nbsp; //printArray(dates2014);</div><div>&nbsp;&nbsp;</div><div>&nbsp; //prices2014 = getYearPrices(\"2014\", prices2014);</div><div>&nbsp; //printArray(prices2014);</div><div><br></div><div>&nbsp; //volumes2014 = getYearVolumes(\"2014\", volumes2014);</div><div>&nbsp; //printArray(volumes2014);</div><div>&nbsp; //println(volumes[0]);</div><div>&nbsp;&nbsp;</div><div>&nbsp; //dates2015 = getYearDates(\"2015\", dates2015);</div><div>&nbsp; //printArray(dates2015);</div><div><br></div><div>&nbsp;&nbsp;</div><div>&nbsp; &nbsp;//indexNov = getMonthIndex(\"2014-11\");</div><div>&nbsp; &nbsp;//printArray(indexNov);</div><div>&nbsp; &nbsp;</div><div>&nbsp; &nbsp;dates2014Nov = getMonthDates(\"2014-11\", dates2014Nov);</div><div>&nbsp; &nbsp;printArray(dates2014Nov);</div><div>&nbsp;&nbsp;</div><div>&nbsp; &nbsp;prices2014Nov = getMonthPrices(\"2014-11\", prices2014Nov);</div><div>&nbsp; &nbsp;printArray(prices2014Nov);</div><div><br></div><div>&nbsp; &nbsp;volumes2014Nov = getMonthVolumes(\"2014-11\", volumes2014Nov);</div><div>&nbsp; &nbsp;printArray(volumes2014Nov);</div><div><br></div><div><br></div><div>}</div><div><br></div><div>void loadData(String filename) {</div><div><br></div><div>&nbsp; rawData = loadStrings(filename);</div><div><br></div><div>&nbsp; dates = new String[rawData.length-1];</div><div>&nbsp; prices = new float[rawData.length-1];</div><div>&nbsp; volumes = new float[rawData.length-1];</div><div><br></div><div>&nbsp; for (int i = 1; i &lt; rawData.length; i++) {</div><div><br></div><div>&nbsp; &nbsp; String[] thisRow = split(rawData[i], \",\");&nbsp;</div><div>&nbsp; &nbsp; //printArray(thisRow);</div><div>&nbsp; &nbsp; dates[i-1] = (thisRow[0]);</div><div>&nbsp; &nbsp; prices[i-1] = float(thisRow[1]);</div><div>&nbsp; &nbsp; volumes[i-1] = float(thisRow[2])*0.000001;</div><div>&nbsp; }</div><div>}</div><div><br></div><div><br></div><div>String[] getYearDates(String year, String[] datesYear) {</div><div>&nbsp; IntList indexYear = new IntList();</div><div>&nbsp; indexYear = getYearIndex(year);</div><div>&nbsp; datesYear = new String[indexYear.size()];</div><div>&nbsp; for (int i = 0; i &lt; indexYear.size(); i++) {</div><div>&nbsp; &nbsp; &nbsp;datesYear[i] = dates[indexYear.get(i)];</div><div>&nbsp; }</div><div>&nbsp; //printArray(datesYear);</div><div>&nbsp; return datesYear;</div><div>}</div><div><br></div><div>float[] getYearPrices(String year, float[] pricesYear) {</div><div>&nbsp; IntList indexYear = new IntList();</div><div>&nbsp; indexYear = getYearIndex(year);</div><div>&nbsp; pricesYear = new float[indexYear.size()];</div><div>&nbsp; for (int i = 0; i &lt; indexYear.size(); i++) {</div><div>&nbsp; &nbsp; &nbsp;pricesYear[i] = prices[indexYear.get(i)];</div><div>&nbsp; }</div><div>&nbsp; //printArray(pricesYear);</div><div>&nbsp; return pricesYear;</div><div>}</div><div><br></div><div>float[] getYearVolumes(String year, float[] volumesYear) {</div><div>&nbsp; IntList indexYear = new IntList();</div><div>&nbsp; indexYear = getYearIndex(year);</div><div>&nbsp; volumesYear = new float[indexYear.size()];</div><div>&nbsp; for (int i = 0; i &lt; indexYear.size(); i++) {</div><div>&nbsp; &nbsp; &nbsp;volumesYear[i] = volumes[indexYear.get(i)];</div><div>&nbsp; }</div><div>&nbsp; //printArray(pricesYear);</div><div>&nbsp; return volumesYear;</div><div>}</div><div><br></div><div><br></div><div><br></div><div>IntList getYearIndex(String year) {</div><div>&nbsp; IntList indexOfDaysInYear = new IntList();</div><div>&nbsp; for (int i = 0; i &lt; dates.length; i++) {</div><div>&nbsp; &nbsp; String[] checkYear = match(dates[i], year);</div><div>&nbsp; &nbsp; if (checkYear != null) {</div><div>&nbsp; &nbsp; &nbsp; //println(\"index:\",i,\"-&gt;we are all in \", year);&nbsp;</div><div>&nbsp; &nbsp; &nbsp; indexOfDaysInYear.append(i);</div><div>&nbsp; &nbsp; } else {</div><div>&nbsp; &nbsp; &nbsp; //println(\"index:\",i,\"-&gt;now outside of \", year);</div><div>&nbsp; &nbsp; }</div><div>&nbsp; }</div><div>&nbsp; //printArray(indexOct);</div><div>&nbsp; return indexOfDaysInYear;</div><div>}</div><div><br></div><div>IntList getMonthIndex(String month) {</div><div>&nbsp; IntList indexOfDaysInMonth = new IntList();</div><div>&nbsp; for (int i = 0; i &lt; dates.length; i++) {</div><div>&nbsp; &nbsp; String[] checkMonth = match(dates[i], month);</div><div>&nbsp; &nbsp; if (checkMonth != null) {</div><div>&nbsp; &nbsp; &nbsp; //println(\"index:\",i,\"-&gt;we are all in \", month);&nbsp;</div><div>&nbsp; &nbsp; &nbsp; indexOfDaysInMonth.append(i);</div><div>&nbsp; &nbsp; } else {</div><div>&nbsp; &nbsp; &nbsp; //println(\"index:\",i,\"-&gt;now outside of \", month);</div><div>&nbsp; &nbsp; }</div><div>&nbsp; }</div><div>&nbsp; //printArray(indexOct);</div><div>&nbsp; return indexOfDaysInMonth;</div><div>}</div><div><br></div><div><br></div><div>String[] getMonthDates(String monthName, String[] datesMonth) {</div><div>&nbsp; IntList indexMonth = new IntList();</div><div>&nbsp; indexMonth = getMonthIndex(monthName);</div><div>&nbsp; datesMonth = new String[indexMonth.size()];</div><div>&nbsp; for (int i = 0; i &lt; indexMonth.size(); i++) {</div><div>&nbsp; &nbsp; &nbsp;datesMonth[i] = dates[indexMonth.get(i)];</div><div>&nbsp; }</div><div>&nbsp; //printArray(datesYear);</div><div>&nbsp; return datesMonth;</div><div>}</div><div><br></div><div>float[] getMonthPrices(String monthName, float[] pricesMonth) {</div><div>&nbsp; IntList indexMonth = new IntList();</div><div>&nbsp; indexMonth = getMonthIndex(monthName);</div><div>&nbsp; pricesMonth = new float[indexMonth.size()];</div><div>&nbsp; for (int i = 0; i &lt; indexMonth.size(); i++) {</div><div>&nbsp; &nbsp; &nbsp;pricesMonth[i] = prices[indexMonth.get(i)];</div><div>&nbsp; }</div><div>&nbsp; //printArray(pricesYear);</div><div>&nbsp; return pricesMonth;</div><div>}</div><div><br></div><div>float[] getMonthVolumes(String monthName, float[] volumesMonth) {</div><div>&nbsp; IntList indexMonth = new IntList();</div><div>&nbsp; indexMonth = getYearIndex(monthName);</div><div>&nbsp; volumesMonth = new float[indexMonth.size()];</div><div>&nbsp; for (int i = 0; i &lt; indexMonth.size(); i++) {</div><div>&nbsp; &nbsp; &nbsp;volumesMonth[i] = volumes[indexMonth.get(i)];</div><div>&nbsp; }</div><div>&nbsp; //printArray(pricesYear);</div><div>&nbsp; return volumesMonth;</div><div>}</div>"
+            },
+            "style": {
+              "background": "transparent"
+            },
+            "collapsed": true
+          },
+          "ideas": {
+            "1": {
+              "title": "loadData()",
+              "id": 81,
+              "ideas": {
+                "1": {
+                  "title": "to get all dates, prices, and volumes",
+                  "id": 82,
+                  "attr": {
+                    "style": {
+                      "background": "transparent"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "transparent"
+                }
+              }
+            },
+            "2": {
+              "title": "getYearIndex()",
+              "id": 83,
+              "attr": {
+                "style": {
+                  "background": "transparent"
+                }
+              }
+            },
+            "3": {
+              "title": "getMonthIndex()",
+              "id": 84,
+              "attr": {
+                "style": {
+                  "background": "transparent"
+                }
+              }
+            },
+            "4": {
+              "title": "getYearDates()",
+              "id": 85,
+              "ideas": {
+                "1": {
+                  "title": "getYearPrices()",
+                  "id": 86,
+                  "ideas": {
+                    "1": {
+                      "title": "getYearVolumes()",
+                      "id": 87,
+                      "attr": {
+                        "style": {
+                          "background": "transparent"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "transparent"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "transparent"
+                }
+              }
+            },
+            "5": {
+              "title": "getMonthDates()",
+              "id": 88,
+              "ideas": {
+                "1": {
+                  "title": "getMonthPrices()",
+                  "id": 89,
+                  "ideas": {
+                    "1": {
+                      "title": "getMonthVolumes()",
+                      "id": 90,
+                      "attr": {
+                        "style": {
+                          "background": "transparent"
+                        }
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "background": "transparent"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "transparent"
+                }
+              }
+            },
+            "6": {
+              "title": "questions",
+              "id": 91,
+              "ideas": {
+                "1": {
+                  "title": "when is necessary to use class here",
+                  "id": 92,
+                  "attr": {
+                    "style": {
+                      "background": "transparent"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "transparent"
+                }
+              }
+            }
+          }
+        },
+        "3": {
+          "title": "turn 7 functions to return StringList, FloatList, IntList which is much stronger than array",
+          "id": 93,
+          "attr": {
+            "attachment": {
+              "contentType": "text/html",
+              "content": "<div>String filename = \"wfgk.csv\";</div><div>String[] rawData;</div><div>String[] dates;</div><div>float[] prices;</div><div>float[] volumes;</div><div><br></div><div><br></div><div>IntList index2014 = new IntList();</div><div>StringList dates2014;</div><div>FloatList prices2014;</div><div>FloatList volumes2014;</div><div><br></div><div>IntList index2015 = new IntList();</div><div>String[] dates2015;</div><div><br></div><div><br></div><div><br></div><div>IntList indexNov = new IntList();</div><div>IntList indexOct = new IntList();</div><div>StringList dates2014Nov;</div><div>FloatList prices2014Nov;</div><div>FloatList volumes2014Nov;</div><div>//ArrayList wfgkYears = new ArrayList();</div><div><br></div><div>void setup() {</div><div>&nbsp; loadData(\"wfgk.csv\");</div><div>&nbsp;&nbsp;</div><div>&nbsp; dates2014 = getYearDates(\"2014\", dates2014);</div><div>&nbsp; printArray(dates2014);</div><div>&nbsp; dates2014.sortReverse();</div><div>&nbsp; printArray(dates2014);</div><div>&nbsp; //prices2014 = getYearPrices(\"2014\", prices2014);</div><div>&nbsp; //printArray(prices2014);</div><div><br></div><div>&nbsp; //volumes2014 = getYearVolumes(\"2014\", volumes2014);</div><div>&nbsp; //printArray(volumes2014);</div><div>&nbsp; //println(volumes[0]);</div><div>&nbsp;&nbsp;</div><div>&nbsp; //dates2015 = getYearDates(\"2015\", dates2015);</div><div>&nbsp; //printArray(dates2015);</div><div><br></div><div>&nbsp;&nbsp;</div><div>&nbsp; &nbsp;//indexNov = getMonthIndex(\"2014-11\");</div><div>&nbsp; &nbsp;//printArray(indexNov);</div><div>&nbsp; &nbsp;</div><div>&nbsp; &nbsp;//dates2014Nov = getMonthDates(\"2014-11\", dates2014Nov);</div><div>&nbsp; &nbsp;//printArray(dates2014Nov);</div><div>&nbsp;&nbsp;</div><div>&nbsp; &nbsp;//prices2014Nov = getMonthPrices(\"2014-11\", prices2014Nov);</div><div>&nbsp; &nbsp;//printArray(prices2014Nov);</div><div><br></div><div>&nbsp; &nbsp;//volumes2014Nov = getMonthVolumes(\"2014-11\", volumes2014Nov);</div><div>&nbsp; &nbsp;//printArray(volumes2014Nov);</div><div><br></div><div><br></div><div>}</div><div><br></div><div>void loadData(String filename) {</div><div><br></div><div>&nbsp; rawData = loadStrings(filename);</div><div><br></div><div>&nbsp; dates = new String[rawData.length-1];</div><div>&nbsp; prices = new float[rawData.length-1];</div><div>&nbsp; volumes = new float[rawData.length-1];</div><div><br></div><div>&nbsp; for (int i = 1; i &lt; rawData.length; i++) {</div><div><br></div><div>&nbsp; &nbsp; String[] thisRow = split(rawData[i], \",\");&nbsp;</div><div>&nbsp; &nbsp; //printArray(thisRow);</div><div>&nbsp; &nbsp; dates[i-1] = (thisRow[0]);</div><div>&nbsp; &nbsp; prices[i-1] = float(thisRow[1]);</div><div>&nbsp; &nbsp; volumes[i-1] = float(thisRow[2])*0.000001;</div><div>&nbsp; }</div><div>}</div><div><br></div><div><br></div><div>StringList getYearDates(String year, StringList datesYear) {</div><div>&nbsp; IntList indexYear = new IntList();</div><div>&nbsp; indexYear = getYearIndex(year);</div><div>&nbsp; datesYear = new StringList();</div><div>&nbsp; for (int i = 0; i &lt; indexYear.size(); i++) {</div><div>&nbsp; &nbsp; &nbsp;datesYear.append(dates[indexYear.get(i)]);</div><div>&nbsp; }</div><div>&nbsp; //printArray(datesYear);</div><div>&nbsp; return datesYear;</div><div>}</div><div><br></div><div>FloatList getYearPrices(String year, FloatList pricesYear) {</div><div>&nbsp; IntList indexYear = new IntList();</div><div>&nbsp; indexYear = getYearIndex(year);</div><div>&nbsp; pricesYear = new FloatList();</div><div>&nbsp; for (int i = 0; i &lt; indexYear.size(); i++) {</div><div>&nbsp; &nbsp; &nbsp;pricesYear.append(prices[indexYear.get(i)]);</div><div>&nbsp; }</div><div>&nbsp; //printArray(pricesYear);</div><div>&nbsp; return pricesYear;</div><div>}</div><div><br></div><div>FloatList getYearVolumes(String year, FloatList volumesYear) {</div><div>&nbsp; IntList indexYear = new IntList();</div><div>&nbsp; indexYear = getYearIndex(year);</div><div>&nbsp; volumesYear = new FloatList();</div><div>&nbsp; for (int i = 0; i &lt; indexYear.size(); i++) {</div><div>&nbsp; &nbsp; &nbsp;volumesYear.append(volumes[indexYear.get(i)]);</div><div>&nbsp; }</div><div>&nbsp; //printArray(pricesYear);</div><div>&nbsp; return volumesYear;</div><div>}</div><div><br></div><div><br></div><div><br></div><div>IntList getYearIndex(String year) {</div><div>&nbsp; IntList indexOfDaysInYear = new IntList();</div><div>&nbsp; for (int i = 0; i &lt; dates.length; i++) {</div><div>&nbsp; &nbsp; String[] checkYear = match(dates[i], year);</div><div>&nbsp; &nbsp; if (checkYear != null) {</div><div>&nbsp; &nbsp; &nbsp; //println(\"index:\",i,\"-&gt;we are all in \", year);&nbsp;</div><div>&nbsp; &nbsp; &nbsp; indexOfDaysInYear.append(i);</div><div>&nbsp; &nbsp; } else {</div><div>&nbsp; &nbsp; &nbsp; //println(\"index:\",i,\"-&gt;now outside of \", year);</div><div>&nbsp; &nbsp; }</div><div>&nbsp; }</div><div>&nbsp; //printArray(indexOct);</div><div>&nbsp; return indexOfDaysInYear;</div><div>}</div><div><br></div><div>IntList getMonthIndex(String month) {</div><div>&nbsp; IntList indexOfDaysInMonth = new IntList();</div><div>&nbsp; for (int i = 0; i &lt; dates.length; i++) {</div><div>&nbsp; &nbsp; String[] checkMonth = match(dates[i], month);</div><div>&nbsp; &nbsp; if (checkMonth != null) {</div><div>&nbsp; &nbsp; &nbsp; //println(\"index:\",i,\"-&gt;we are all in \", month);&nbsp;</div><div>&nbsp; &nbsp; &nbsp; indexOfDaysInMonth.append(i);</div><div>&nbsp; &nbsp; } else {</div><div>&nbsp; &nbsp; &nbsp; //println(\"index:\",i,\"-&gt;now outside of \", month);</div><div>&nbsp; &nbsp; }</div><div>&nbsp; }</div><div>&nbsp; //printArray(indexOct);</div><div>&nbsp; return indexOfDaysInMonth;</div><div>}</div><div><br></div><div><br></div><div>StringList getMonthDates(String monthName, StringList datesMonth) {</div><div>&nbsp; IntList indexMonth = new IntList();</div><div>&nbsp; indexMonth = getMonthIndex(monthName);</div><div>&nbsp; datesMonth = new StringList();</div><div>&nbsp; for (int i = 0; i &lt; indexMonth.size(); i++) {</div><div>&nbsp; &nbsp; &nbsp;datesMonth.append(dates[indexMonth.get(i)]);</div><div>&nbsp; }</div><div>&nbsp; //printArray(datesYear);</div><div>&nbsp; return datesMonth;</div><div>}</div><div><br></div><div>FloatList getMonthPrices(String monthName, FloatList pricesMonth) {</div><div>&nbsp; IntList indexMonth = new IntList();</div><div>&nbsp; indexMonth = getMonthIndex(monthName);</div><div>&nbsp; pricesMonth = new FloatList();</div><div>&nbsp; for (int i = 0; i &lt; indexMonth.size(); i++) {</div><div>&nbsp; &nbsp; &nbsp;pricesMonth.append(prices[indexMonth.get(i)]);</div><div>&nbsp; }</div><div>&nbsp; //printArray(pricesYear);</div><div>&nbsp; return pricesMonth;</div><div>}</div><div><br></div><div>FloatList getMonthVolumes(String monthName, FloatList volumesMonth) {</div><div>&nbsp; IntList indexMonth = new IntList();</div><div>&nbsp; indexMonth = getYearIndex(monthName);</div><div>&nbsp; volumesMonth = new FloatList();</div><div>&nbsp; for (int i = 0; i &lt; indexMonth.size(); i++) {</div><div>&nbsp; &nbsp; &nbsp;volumesMonth.append(volumes[indexMonth.get(i)]);</div><div>&nbsp; }</div><div>&nbsp; //printArray(pricesYear);</div><div>&nbsp; return volumesMonth;</div><div>}</div>"
+            },
+            "style": {
+              "background": "transparent"
+            }
+          },
+          "ideas": {
+            "1": {
+              "title": "Question",
+              "id": 94,
+              "ideas": {
+                "1": {
+                  "title": "class contain data with pure array",
+                  "id": 95,
+                  "attr": {
+                    "style": {
+                      "background": "transparent"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "class contain data with ArrayList/IntList",
+                  "id": 96,
+                  "attr": {
+                    "style": {
+                      "background": "transparent"
+                    }
+                  }
+                }
+              },
+              "attr": {
+                "style": {
+                  "background": "transparent"
+                }
+              }
+            }
+          }
+        },
+        "4": {
+          "title": "most of functions now use and return StringList, IntList and FloatList",
+          "id": 97,
+          "attr": {
+            "style": {
+              "background": "transparent"
+            }
+          }
+        },
+        "5": {
+          "title": "createSwitchButton()",
+          "id": 98,
+          "attr": {
+            "style": {
+              "background": "#66CDAA"
+            }
+          },
+          "ideas": {
+            "1": {
+              "title": "add Color change when clicked button",
+              "id": 100,
+              "attr": {
+                "style": {
+                  "background": "#66CDAA"
+                }
+              }
+            }
+          }
+        }
+      },
+      "attr": {
+        "style": {
+          "background": "#66CDAA"
+        },
+        "attachment": {
+          "contentType": "text/html",
+          "content": "<div><br></div><div>String filename = \"wfgk.csv\";</div><div>String[] rawData;</div><div>StringList dates = new StringList();</div><div>FloatList prices = new FloatList();;</div><div>FloatList volumes = new FloatList();;</div><div><br></div><div><br></div><div>IntList index2014 = new IntList();</div><div>StringList dates2014;</div><div>FloatList prices2014;</div><div>FloatList volumes2014;</div><div><br></div><div>IntList index2015 = new IntList();</div><div>StringList dates2015;</div><div>FloatList prices2015;</div><div>FloatList volumes2015;</div><div><br></div><div><br></div><div><br></div><div>//IntList indexJan = new IntList();</div><div>//IntList indexFeb = new IntList();</div><div>StringList dates2015Jan;</div><div>FloatList prices2015Jan;</div><div>FloatList volumes2015Jan;</div><div><br></div><div>float overallMin;</div><div>float overallMax;</div><div><br></div><div>float xSpacer; // distance between points</div><div>float margin, graphHeight;</div><div>PVector[] positionsPrices2014;</div><div>PVector[] positionsPrices2015;</div><div>PVector[] positionsPrices2015Jan;</div><div><br></div><div>boolean toggle2014;</div><div>boolean toggle2015;</div><div>boolean toggle2015Jan;</div><div>float r;</div><div><br></div><div>void setup() {</div><div>&nbsp; size(1200, 600);</div><div>&nbsp; toggle2014 = true;</div><div>&nbsp; toggle2015 = false;</div><div>&nbsp; r = 20;</div><div>&nbsp;&nbsp;</div><div>&nbsp; loadData(\"wfgk.csv\");</div><div>&nbsp;&nbsp;</div><div>&nbsp; prices2014 = getYearPrices(\"2014\", prices2014);</div><div>&nbsp; positionsPrices2014 = getPVectorPoints(prices2014);</div><div>&nbsp; dates2014 = getYearDates(\"2014\", dates2014);</div><div><br></div><div>&nbsp; prices2015 = getYearPrices(\"2015\", prices2015);</div><div>&nbsp; positionsPrices2015 = getPVectorPoints(prices2015);</div><div>&nbsp; dates2015 = getYearDates(\"2015\", dates2015);</div><div><br></div><div>&nbsp; prices2015Jan = getMonthPrices(\"2015-01\", prices2015Jan);</div><div>&nbsp; positionsPrices2015Jan = getPVectorPoints(prices2015Jan);</div><div>&nbsp; dates2015Jan = getMonthDates(\"2015\", dates2015Jan);</div><div><br></div><div>}</div><div><br></div><div><br></div><div>void draw() {</div><div><br></div><div>&nbsp;&nbsp;</div><div>&nbsp; if (toggle2014) {</div><div>&nbsp; &nbsp; drawPointsPositions(positionsPrices2014);</div><div>&nbsp; &nbsp; drawGUI(positionsPrices2014, dates2014);</div><div>&nbsp; &nbsp; smooth();</div><div>&nbsp; }</div><div>&nbsp;&nbsp;</div><div>&nbsp; if (toggle2015) {</div><div>&nbsp; &nbsp; drawPointsPositions(positionsPrices2015);</div><div>&nbsp; &nbsp; drawGUI(positionsPrices2015, dates2015);</div><div>&nbsp; &nbsp; smooth();</div><div>&nbsp; }</div><div>&nbsp;&nbsp;</div><div>&nbsp; if (toggle2015Jan) {</div><div>&nbsp; &nbsp; drawPointsPositions(positionsPrices2015Jan);</div><div>&nbsp; &nbsp; drawGUI(positionsPrices2015Jan, dates2015Jan);</div><div>&nbsp; &nbsp; smooth();</div><div>&nbsp; }</div><div>&nbsp;&nbsp;</div><div>&nbsp; createSwitchButton();</div><div>}</div><div><br></div><div>void createSwitchButton() {</div><div>&nbsp;&nbsp;</div><div>&nbsp; strokeWeight(5);</div><div>&nbsp; if (toggle2014) {</div><div>&nbsp; &nbsp; fill(#6CA58D);</div><div>&nbsp; &nbsp; stroke(#4663F0);</div><div>&nbsp; } else {</div><div>&nbsp; &nbsp; fill(200);</div><div>&nbsp; &nbsp; stroke(50);</div><div>&nbsp; }</div><div>&nbsp; ellipse(width/3, margin/2, r, r);</div><div>&nbsp;&nbsp;</div><div>&nbsp; if (toggle2015) {</div><div>&nbsp; &nbsp; fill(#6CA58D);</div><div>&nbsp; &nbsp; stroke(#4663F0);</div><div>&nbsp; } else {</div><div>&nbsp; &nbsp; fill(200);</div><div>&nbsp; &nbsp; stroke(50);</div><div>&nbsp; }</div><div>&nbsp; ellipse(width/2, margin/2, r, r);</div><div>&nbsp;&nbsp;</div><div>&nbsp; if (toggle2015Jan) {</div><div>&nbsp; &nbsp; fill(#6CA58D);</div><div>&nbsp; &nbsp; stroke(#4663F0);</div><div>&nbsp; } else {</div><div>&nbsp; &nbsp; fill(200);</div><div>&nbsp; &nbsp; stroke(50);</div><div>&nbsp; }</div><div>&nbsp; ellipse(width*2/3, margin/2, r, r);</div><div>}</div><div><br></div><div>void mouseReleased() {</div><div>&nbsp; float d1 = dist(mouseX, mouseY, width/3, margin/2);</div><div>&nbsp; float d2 = dist(mouseX, mouseY, width/2, margin/2);</div><div>&nbsp; float d3 = dist(mouseX, mouseY, width*2/3, margin/2);</div><div>&nbsp; if (d1 &lt; r) {</div><div>&nbsp; &nbsp; toggle2014 = true;</div><div>&nbsp; &nbsp; toggle2015 = false;</div><div>&nbsp; &nbsp; toggle2015Jan = false;</div><div>&nbsp; }</div><div>&nbsp;&nbsp;</div><div>&nbsp; if (d2 &lt; r) {</div><div>&nbsp; &nbsp; toggle2015 = true;</div><div>&nbsp; &nbsp; toggle2014 = false;</div><div>&nbsp; &nbsp; toggle2015Jan = false;</div><div>&nbsp; }</div><div>&nbsp;&nbsp;</div><div>&nbsp; if (d3 &lt; r) {</div><div>&nbsp; &nbsp; toggle2015Jan = true;</div><div>&nbsp; &nbsp; toggle2014 = false;</div><div>&nbsp; &nbsp; toggle2015 = false;</div><div>&nbsp; }</div><div>}</div><div><br></div><div><br></div><div>void drawPointsPositions(PVector[] positions) {</div><div>&nbsp; background(20);</div><div>&nbsp; fill(200);</div><div>&nbsp; for (int i = 0; i &lt; positions.length; i++) {</div><div>&nbsp; &nbsp;ellipse(positions[i].x, positions[i].y, 3, 3);</div><div>&nbsp; }</div><div>}</div><div><br></div><div>PVector[] getPVectorPoints(FloatList pricesOrVolumes) { &nbsp;&nbsp;</div><div>&nbsp; overallMin = pricesOrVolumes.min();</div><div>&nbsp; overallMax = pricesOrVolumes.max();</div><div>&nbsp;&nbsp;</div><div>&nbsp; margin = 50;</div><div>&nbsp; graphHeight = (height-margin-margin);</div><div>&nbsp; xSpacer = ((width - margin) - margin)/(pricesOrVolumes.size()-1);</div><div><br></div><div>&nbsp; PVector[] positions = new PVector[pricesOrVolumes.size()];</div><div>&nbsp; for (int i = 0; i &lt; pricesOrVolumes.size(); i++) {</div><div>&nbsp; &nbsp; float adjPrice = map(pricesOrVolumes.get(i), overallMin, overallMax, 0, graphHeight );&nbsp;</div><div>&nbsp; &nbsp; float yPos = height - margin - adjPrice;</div><div>&nbsp; &nbsp; float xPos = margin + (xSpacer*i);</div><div>&nbsp; &nbsp; positions[i] = new PVector(xPos, yPos);</div><div>&nbsp; }</div><div>&nbsp; return positions;</div><div>} &nbsp;</div><div><br></div><div><br></div><div>void drawGUI(PVector[] positionsPrices, StringList positionsDates) {</div><div>&nbsp; for (int i = 0; i &lt; positionsPrices.length; i++) {</div><div>&nbsp; &nbsp; stroke(200, 100);</div><div>&nbsp; &nbsp; strokeWeight(1);</div><div>&nbsp; &nbsp; // line through point vertically</div><div>&nbsp; &nbsp; line(positionsPrices[i].x, margin, positionsPrices[i].x, height-margin);</div><div><br></div><div>&nbsp; &nbsp; // draw date for each point</div><div>&nbsp; &nbsp; //text(dates[i], positions[i].x-35, height-margin+20);</div><div><br></div><div>&nbsp; &nbsp; // link point with line backward</div><div>&nbsp; &nbsp; if (i &gt; 0) {</div><div>&nbsp; &nbsp; &nbsp; stroke(200);</div><div>&nbsp; &nbsp; &nbsp; strokeWeight(2);</div><div>&nbsp; &nbsp; &nbsp; line(positionsPrices[i].x, positionsPrices[i].y, positionsPrices[i-1].x, positionsPrices[i-1].y);</div><div>&nbsp; &nbsp; }</div><div>&nbsp; }</div><div><br></div><div>&nbsp; // draw date range</div><div>&nbsp; fill(200, 0, 100);</div><div>&nbsp; text(positionsDates.get(0), margin-40, height-margin+20);</div><div>&nbsp; text(positionsDates.get(positionsDates.size()-1), positionsPrices[positionsPrices.length-1].x-40, height-margin+20);</div><div><br></div><div><br></div><div>&nbsp; // draw data range</div><div>&nbsp; fill(100, 200, 100);</div><div>&nbsp; text(overallMax, 5, margin);</div><div>&nbsp; text(overallMin, 5, height-margin);</div><div>}</div><div><br></div><div><br></div><div><br></div><div><br></div><div>void loadData(String filename) {</div><div><br></div><div>&nbsp; rawData = loadStrings(filename);</div><div>&nbsp; for (int i = 1; i &lt; rawData.length; i++) {</div><div><br></div><div>&nbsp; &nbsp; String[] thisRow = split(rawData[i], \",\");&nbsp;</div><div>&nbsp; &nbsp; //printArray(thisRow);</div><div>&nbsp; &nbsp; dates.append(thisRow[0]);</div><div>&nbsp; &nbsp; prices.append(float(thisRow[1]));</div><div>&nbsp; &nbsp; volumes.append(float(thisRow[2])*0.000001);</div><div>&nbsp; }</div><div>}</div><div><br></div><div><br></div><div>StringList getYearDates(String year, StringList datesYear) {</div><div>&nbsp; IntList indexYear = new IntList();</div><div>&nbsp; indexYear = getYearIndex(year);</div><div>&nbsp; datesYear = new StringList();</div><div>&nbsp; for (int i = 0; i &lt; indexYear.size(); i++) {</div><div>&nbsp; &nbsp; &nbsp;datesYear.append(dates.get(indexYear.get(i)));</div><div>&nbsp; }</div><div>&nbsp; //printArray(datesYear);</div><div>&nbsp; return datesYear;</div><div>}</div><div><br></div><div>FloatList getYearPrices(String year, FloatList pricesYear) {</div><div>&nbsp; IntList indexYear = new IntList();</div><div>&nbsp; indexYear = getYearIndex(year);</div><div>&nbsp; pricesYear = new FloatList();</div><div>&nbsp; for (int i = 0; i &lt; indexYear.size(); i++) {</div><div>&nbsp; &nbsp; &nbsp;pricesYear.append(prices.get(indexYear.get(i)));</div><div>&nbsp; }</div><div>&nbsp; //printArray(pricesYear);</div><div>&nbsp; return pricesYear;</div><div>}</div><div><br></div><div>FloatList getYearVolumes(String year, FloatList volumesYear) {</div><div>&nbsp; IntList indexYear = new IntList();</div><div>&nbsp; indexYear = getYearIndex(year);</div><div>&nbsp; volumesYear = new FloatList();</div><div>&nbsp; for (int i = 0; i &lt; indexYear.size(); i++) {</div><div>&nbsp; &nbsp; &nbsp;volumesYear.append(volumes.get(indexYear.get(i)));</div><div>&nbsp; }</div><div>&nbsp; //printArray(pricesYear);</div><div>&nbsp; return volumesYear;</div><div>}</div><div><br></div><div><br></div><div><br></div><div>IntList getYearIndex(String year) {</div><div>&nbsp; IntList indexOfDaysInYear = new IntList();</div><div>&nbsp; for (int i = 0; i &lt; dates.size(); i++) {</div><div>&nbsp; &nbsp; String[] checkYear = match(dates.get(i), year);</div><div>&nbsp; &nbsp; if (checkYear != null) {</div><div>&nbsp; &nbsp; &nbsp; //println(\"index:\",i,\"-&gt;we are all in \", year);&nbsp;</div><div>&nbsp; &nbsp; &nbsp; indexOfDaysInYear.append(i);</div><div>&nbsp; &nbsp; } else {</div><div>&nbsp; &nbsp; &nbsp; //println(\"index:\",i,\"-&gt;now outside of \", year);</div><div>&nbsp; &nbsp; }</div><div>&nbsp; }</div><div>&nbsp; //printArray(indexOct);</div><div>&nbsp; return indexOfDaysInYear;</div><div>}</div><div><br></div><div>IntList getMonthIndex(String month) {</div><div>&nbsp; IntList indexOfDaysInMonth = new IntList();</div><div>&nbsp; for (int i = 0; i &lt; dates.size(); i++) {</div><div>&nbsp; &nbsp; String[] checkMonth = match(dates.get(i), month);</div><div>&nbsp; &nbsp; if (checkMonth != null) {</div><div>&nbsp; &nbsp; &nbsp; //println(\"index:\",i,\"-&gt;we are all in \", month);&nbsp;</div><div>&nbsp; &nbsp; &nbsp; indexOfDaysInMonth.append(i);</div><div>&nbsp; &nbsp; } else {</div><div>&nbsp; &nbsp; &nbsp; //println(\"index:\",i,\"-&gt;now outside of \", month);</div><div>&nbsp; &nbsp; }</div><div>&nbsp; }</div><div>&nbsp; //printArray(indexOct);</div><div>&nbsp; return indexOfDaysInMonth;</div><div>}</div><div><br></div><div><br></div><div>StringList getMonthDates(String monthName, StringList datesMonth) {</div><div>&nbsp; IntList indexMonth = new IntList();</div><div>&nbsp; indexMonth = getMonthIndex(monthName);</div><div>&nbsp; datesMonth = new StringList();</div><div>&nbsp; for (int i = 0; i &lt; indexMonth.size(); i++) {</div><div>&nbsp; &nbsp; &nbsp;datesMonth.append(dates.get(indexMonth.get(i)));</div><div>&nbsp; }</div><div>&nbsp; //printArray(datesYear);</div><div>&nbsp; return datesMonth;</div><div>}</div><div><br></div><div>FloatList getMonthPrices(String monthName, FloatList pricesMonth) {</div><div>&nbsp; IntList indexMonth = new IntList();</div><div>&nbsp; indexMonth = getMonthIndex(monthName);</div><div>&nbsp; pricesMonth = new FloatList();</div><div>&nbsp; for (int i = 0; i &lt; indexMonth.size(); i++) {</div><div>&nbsp; &nbsp; &nbsp;pricesMonth.append(prices.get(indexMonth.get(i)));</div><div>&nbsp; }</div><div>&nbsp; //printArray(pricesYear);</div><div>&nbsp; return pricesMonth;</div><div>}</div><div><br></div><div>FloatList getMonthVolumes(String monthName, FloatList volumesMonth) {</div><div>&nbsp; IntList indexMonth = new IntList();</div><div>&nbsp; indexMonth = getYearIndex(monthName);</div><div>&nbsp; volumesMonth = new FloatList();</div><div>&nbsp; for (int i = 0; i &lt; indexMonth.size(); i++) {</div><div>&nbsp; &nbsp; &nbsp;volumesMonth.append(volumes.get(indexMonth.get(i)));</div><div>&nbsp; }</div><div>&nbsp; //printArray(pricesYear);</div><div>&nbsp; return volumesMonth;</div><div>}</div>"
+        }
+      }
+    },
+    "71": {
+      "title": "6. myLineGraphProject",
+      "id": 101,
+      "ideas": {
+        "1": {
+          "title": "what I want to see?",
+          "id": 102,
+          "ideas": {
+            "1": {
+              "title": "myPortfolio Overview",
+              "id": 103,
+              "ideas": {
+                "1": {
+                  "title": "page1",
+                  "id": 104,
+                  "ideas": {
+                    "1": {
+                      "title": "invested cash/total cash bar chart ",
+                      "id": 105
+                    },
+                    "2": {
+                      "title": "total stocks market value line",
+                      "id": 106
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "81": {
+      "title": "7. ultimate project",
+      "id": 107,
+      "ideas": {
+        "1": {
+          "title": "simulation to capture relative highest and lowest point of stock price",
+          "id": 108
+        }
+      }
+    }
+  },
+  "links": []
+}
